@@ -3,7 +3,7 @@
   <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>I'm Sorry</title>
+  <title>For Anjali</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     :root{
@@ -44,9 +44,9 @@
   </head>
 <body>
   <main class="card" role="main">
-    <h1>Hey — I'm sorry</h1>
+    <h1>Hey Anjali — I'm sorry</h1>
     <div class="lines">
-      <p>I messed up and I want to make things right.</p>
+      <p>Anjali, I messed up and I want to make things right.</p>
       <p>I know words aren't enough, but I promise to do better.</p>
     </div>
 
@@ -133,12 +133,12 @@
 
     // Stage 1: apology accept -> transition to Valentine prompt
     yes.addEventListener('click', ()=>{
-      speak('Thank you. I love you and I promise to be better.');
-      lines.innerHTML = '<p>Thank you for forgiving me.</p><p>Can I ask one more thing?</p>';
-      hint.textContent = 'Would you be my Valentine? Say Yes to make me the happiest.';
+      speak('Thank you, Anjali. I love you and I promise to be better.');
+      lines.innerHTML = '<p>Thank you for forgiving me, Anjali.</p><p>Can I ask one more thing?</p>';
+      hint.textContent = 'Anjali, would you be my Valentine? Say Yes to make me the happiest.';
       controls.innerHTML = '';
 
-      const yes2 = el('button', { id: 'yes2', type: 'button' }, 'Yes — Be my Valentine ❤️');
+      const yes2 = el('button', { id: 'yes2', type: 'button' }, 'Yes — Be my Valentine, Anjali ❤️');
       controls.appendChild(yes2);
 
       const no2 = el('button', { id: 'no2', type: 'button' }, 'No');
@@ -146,12 +146,12 @@
       area.appendChild(no2);
 
       yes2.addEventListener('click', (ev)=>{
-        speak('You made me so happy! Thank you and happy Valentine\'s Day.');
+        speak('You made me so happy, Anjali! Thank you and happy Valentine\'s Day.');
         yes2.textContent = 'Yay! ❤️';
         yes2.disabled = true;
         no2.disabled = true;
-        lines.innerHTML = '<p>Thank you so much. I will always cherish you.</p>';
-        hint.textContent = 'Happy Valentine\'s Day ❤️';
+        lines.innerHTML = '<p>Thank you so much, Anjali. I will always cherish you.</p>';
+        hint.textContent = 'Happy Valentine\'s Day, Anjali ❤️';
         // burst confetti hearts at button center
         const r = yes2.getBoundingClientRect();
         burstHearts(r.left + r.width/2, r.top + r.height/2, '#ff4d6d');
