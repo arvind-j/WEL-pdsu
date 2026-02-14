@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For Anjali — simple</title>
+  <style>
+    html,body{height:100%;margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff7f8}
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:24px}
+    .card{width:100%;max-width:560px;background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.06);text-align:center}
+    h1{margin:0 0 8px;font-size:22px;color:#222}
+    p{margin:6px 0;color:#444}
+    .controls{display:flex;gap:12px;justify-content:center;margin-top:14px}
+    button{flex:0 0 auto;padding:12px 16px;border-radius:10px;border:0;font-weight:700}
+    #yes{background:#ff4d6d;color:#fff}
+    #no{background:#eee}
+    #debug{display:none;margin-top:12px;padding:8px;background:#fff0f0;color:#900;border:1px solid #f5c6c6;font-family:monospace;font-size:13px}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Hey Anjali — I'm sorry</h1>
+      <p>Anjali, I messed up. I want to make things right.</p>
+      <p>I know words aren't enough — please forgive me?</p>
+
+      <div class="controls">
+        <button id="yes" type="button">Yes — I forgive you</button>
+        <button id="no" type="button">No</button>
+      </div>
+
+      <div id="debug" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <script>
+    const yes = document.getElementById('yes');
+    const no = document.getElementById('no');
+    const debug = document.getElementById('debug');
+
+    function show(msg){ debug.style.display='block'; debug.textContent = msg; }
+
+    function speakSafe(text){
+      if (!('speechSynthesis' in window)) return;
+      try{ const u = new SpeechSynthesisUtterance(text); window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);}catch(e){ show('Speech failed: '+e.message); }
+    }
+
+    yes.addEventListener('click', ()=>{
+      show('Thank you, Anjali. I will be better.');
+      speakSafe('Thank you Anjali, I love you.');
+      yes.disabled = true; no.disabled = true;
+      // reveal simple Valentine prompt
+      setTimeout(()=>{
+        yes.textContent = 'Be my Valentine ❤️';
+        no.textContent = 'No';
+        yes.disabled = false; no.disabled = false;
+      },800);
+    });
+
+    // simple evasive behavior on touch to keep mobile friendly
+    function dodge(e){
+      const parent = no.parentElement;
+      const w = parent.clientWidth - no.offsetWidth - 6;
+      const x = Math.floor(Math.random() * (w+1));
+      no.style.transform = 'translateX('+x+'px)';
+    }
+
+    // use touchstart/mouseenter
+    no.addEventListener('touchstart', function(e){ e.preventDefault(); dodge(e); });
+    no.addEventListener('mouseenter', dodge);
+    no.addEventListener('click', ()=> show('Okay... I will keep trying.'));
+
+    // global error capture for mobile
+    window.addEventListener('error', (ev)=> show('Error: '+(ev.message||'unknown')) );
+    window.addEventListener('unhandledrejection', (ev)=> show('Promise error: '+String(ev.reason)) );
+  </script>
+</body>
+</html>
