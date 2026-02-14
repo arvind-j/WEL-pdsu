@@ -1,228 +1,239 @@
 <!doctype html>
 <html lang="en">
-  <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>For Anjali</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#fff6f6;
-      --card:#ffffff;
-      --accent:#ff6b81;
-      --muted:#7a6f6f;
-      --glass: rgba(255,255,255,0.7);
-    }
-    html,body{height:100%;margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:var(--bg)}
-    body{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 20% 20%, #fff7f9 0%, #ffeef3 30%, #fff 60%)}
-    .scene{position:fixed;inset:0;pointer-events:none;overflow:hidden}
-    .heart{position:absolute;font-family:Great Vibes, cursive;font-size:28px;opacity:.08;color:var(--accent);transform:translateY(0);animation:floatUp 8s linear infinite}
-    @keyframes floatUp{0%{transform:translateY(30vh) scale(.9) rotate(-10deg);opacity:.06}50%{opacity:.09}100%{transform:translateY(-10vh) scale(1.1) rotate(10deg);opacity:0}}
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>For Anjali ❤️</title>
 
-    .card{width:min(720px,94vw);background:linear-gradient(180deg,rgba(255,255,255,.9),var(--card));padding:32px;border-radius:20px;box-shadow:0 18px 40px rgba(255,102,136,.12);text-align:center;position:relative;border:1px solid rgba(255,255,255,.6)}
-    h1{margin:0 0 6px;color:#2b2530;font-size:2rem;font-weight:700}
-    h1 .script{display:block;font-family:Great Vibes, cursive;font-size:2.4rem;color:var(--accent);margin-top:-6px}
-    p{margin:0 0 12px;color:var(--muted);line-height:1.5;font-size:1rem}
-    .lines{margin:18px 0}
-    .controls{display:flex;gap:16px;align-items:center;justify-content:center;margin-top:18px}
-    button{padding:12px 20px;border-radius:12px;border:0;font-weight:700;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
-    button:active{transform:translateY(1px)}
-    #yes{background:linear-gradient(90deg,var(--accent),#ff8aa3);color:white;box-shadow:0 8px 20px rgba(255,107,129,.18)}
-    #yes:hover{transform:translateY(-3px);box-shadow:0 16px 30px rgba(255,107,129,.22)}
-    #no{background:transparent;color:#6b5b5b;border:2px solid rgba(107,91,91,.08);padding:10px 16px}
-    .hint{font-size:.95rem;color:#7a6f6f;margin-top:12px}
-    .btn-area{height:160px;position:relative}
-    #no{position:absolute}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
-    /* confetti hearts */
-    .burst{position:absolute;left:50%;top:50%;pointer-events:none}
-    .burst .c{position:absolute;font-size:18px;transform:translate(-50%,-50%);opacity:0;animation:pop 1s ease-out forwards}
-    @keyframes pop{0%{opacity:1;transform:translate(-50%,-50%) scale(.6)}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(1.4);}}
+<style>
+:root{
+  --bg:#fff6f6;
+  --card:#ffffff;
+  --accent:#ff6b81;
+  --muted:#7a6f6f;
+}
+html,body{
+  height:100%;
+  margin:0;
+  font-family:Poppins,system-ui;
+  background:var(--bg);
+}
+body{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:radial-gradient(circle at 20% 20%, #fff7f9 0%, #ffeef3 30%, #fff 60%);
+}
 
-    @media (max-width:420px){.card{padding:18px} .btn-area{height:200px}}
-  </style>
-  </head>
+/* Floating hearts */
+.scene{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+.heart{
+  position:absolute;
+  font-size:26px;
+  opacity:.08;
+  color:var(--accent);
+  animation:floatUp 8s linear infinite;
+}
+@keyframes floatUp{
+  0%{transform:translateY(30vh) scale(.9);opacity:.05}
+  100%{transform:translateY(-10vh) scale(1.1);opacity:0}
+}
+
+/* Card */
+.card{
+  width:min(720px,94vw);
+  background:rgba(255,255,255,.95);
+  padding:32px;
+  border-radius:20px;
+  box-shadow:0 18px 40px rgba(255,102,136,.15);
+  text-align:center;
+}
+h1{
+  margin:0 0 10px;
+  font-size:2rem;
+}
+p{
+  color:var(--muted);
+  margin:0 0 12px;
+  line-height:1.5;
+}
+.lines{margin:18px 0}
+
+/* Buttons */
+.controls{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  margin-top:18px;
+}
+button{
+  padding:12px 20px;
+  border-radius:12px;
+  border:0;
+  font-weight:700;
+  cursor:pointer;
+}
+#yes{
+  background:linear-gradient(90deg,var(--accent),#ff8aa3);
+  color:#fff;
+}
+#no{
+  background:transparent;
+  color:#6b5b5b;
+  border:2px solid rgba(0,0,0,.1);
+  position:absolute;
+}
+
+/* Area */
+.btn-area{
+  height:160px;
+  position:relative;
+}
+.hint{
+  margin-top:12px;
+  font-size:.95rem;
+  color:#7a6f6f;
+}
+
+/* Confetti hearts */
+.burst{
+  position:absolute;
+  pointer-events:none;
+}
+.burst .c{
+  position:absolute;
+  font-size:18px;
+  animation:pop 1s ease-out forwards;
+}
+@keyframes pop{
+  from{opacity:1;transform:scale(.6)}
+  to{opacity:0;transform:translate(var(--tx),var(--ty)) scale(1.4)}
+}
+
+@media(max-width:420px){
+  .card{padding:18px}
+  .btn-area{height:200px}
+}
+</style>
+</head>
+
 <body>
-  <main class="card" role="main">
-    <h1>Hey Anjali — I'm sorry</h1>
-    <div class="lines">
-      <p>Anjali, I messed up and I want to make things right.</p>
-      <p>I know words aren't enough, but I promise to do better.</p>
+
+<main class="card">
+  <h1>Hey Anjali — I'm sorry 💔</h1>
+
+  <div class="lines">
+    <p>Anjali, I messed up and I truly regret it.</p>
+    <p>Please forgive me. I promise to do better.</p>
+  </div>
+
+  <div class="btn-area" id="area">
+    <div class="controls">
+      <button id="yes">Yes — I forgive you ❤️</button>
+      <button id="no">No</button>
     </div>
+    <div class="hint">Click “Yes” ❤️ (or try catching “No” 😄)</div>
+  </div>
+</main>
 
-    <div class="btn-area" id="area">
-      <div class="controls">
-        <button id="yes" type="button">Yes — I accept your sorry</button>
-        <button id="no" type="button">No</button>
-      </div>
-      <div class="hint">Click "Yes" if you'd forgive me — or try catching "No" if you dare 😉</div>
-    </div>
-  </main>
+<script>
+const area = document.getElementById('area');
+const yes = document.getElementById('yes');
+const no = document.getElementById('no');
+const lines = document.querySelector('.lines');
+const hint = document.querySelector('.hint');
+const controls = document.querySelector('.controls');
 
-  <script>
-    const area = document.getElementById('area');
+/* Background hearts */
+(function(){
+  const scene = document.createElement('div');
+  scene.className = 'scene';
+  const count = window.innerWidth < 600 ? 4 : 8;
+  for(let i=0;i<count;i++){
+    const h = document.createElement('div');
+    h.className = 'heart';
+    h.textContent = '❤';
+    h.style.left = Math.random()*100+'%';
+    h.style.fontSize = (18+Math.random()*30)+'px';
+    h.style.animationDuration = (6+Math.random()*6)+'s';
+    scene.appendChild(h);
+  }
+  document.body.appendChild(scene);
+})();
 
-    function speak(text){
-      if (!('speechSynthesis' in window)) return;
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'en-US';
-      window.speechSynthesis.cancel();
-      window.speechSynthesis.speak(u);
-    }
+/* Move button */
+function moveAway(btn){
+  const r = area.getBoundingClientRect();
+  btn.style.left = Math.random()*(r.width-btn.offsetWidth-10)+'px';
+  btn.style.top = Math.random()*(r.height-btn.offsetHeight-10)+'px';
+}
 
-    // small helper
-    function el(tag, props = {}, text = ''){
-      const e = document.createElement(tag);
-      Object.assign(e, props);
-      if (text) e.textContent = text;
-      return e;
-    }
+/* No button */
+['mouseover','touchstart'].forEach(e=>{
+  no.addEventListener(e,()=>moveAway(no));
+});
 
-    // create decorative floating hearts behind the card
-    function makeBackgroundHearts(){
-      const scene = document.createElement('div');
-      scene.className = 'scene';
-      const count = 10;
-      for (let i=0;i<count;i++){
-        const h = document.createElement('div');
-        h.className = 'heart';
-        h.style.left = (Math.random()*100) + '%';
-        h.style.fontSize = (18 + Math.random()*36) + 'px';
-        h.style.animationDuration = (6 + Math.random()*8) + 's';
-        h.style.opacity = (0.04 + Math.random()*0.08);
-        h.textContent = '❤';
-        scene.appendChild(h);
-      }
-      document.body.appendChild(scene);
-    }
+/* Confetti */
+function burst(x,y){
+  const b=document.createElement('div');
+  b.className='burst';
+  b.style.left=x+'px';
+  b.style.top=y+'px';
+  for(let i=0;i<14;i++){
+    const c=document.createElement('div');
+    c.className='c';
+    c.textContent='❤';
+    const a=Math.random()*Math.PI*2;
+    const d=40+Math.random()*60;
+    c.style.setProperty('--tx',Math.cos(a)*d+'px');
+    c.style.setProperty('--ty',Math.sin(a)*d+'px');
+    b.appendChild(c);
+  }
+  document.body.appendChild(b);
+  setTimeout(()=>b.remove(),1200);
+}
 
-    // confetti hearts burst at element center
-    function burstHearts(x, y, color){
-      const container = document.createElement('div');
-      container.className = 'burst';
-      container.style.left = x + 'px';
-      container.style.top = y + 'px';
-      const pieces = 18;
-      for (let i=0;i<pieces;i++){
-        const c = document.createElement('div');
-        c.className = 'c';
-        c.textContent = '❤';
-        c.style.color = color || '#ff6b81';
-        const angle = (Math.PI*2)*(i/pieces) + (Math.random()*0.6 - 0.3);
-        const dist = 40 + Math.random()*80;
-        const tx = Math.cos(angle)*dist + 'px';
-        const ty = Math.sin(angle)*dist + 'px';
-        c.style.setProperty('--tx', tx);
-        c.style.setProperty('--ty', ty);
-        c.style.left = (Math.random()*20 -10) + 'px';
-        c.style.top = (Math.random()*20 -10) + 'px';
-        container.appendChild(c);
-      }
-      document.body.appendChild(container);
-      setTimeout(()=> container.remove(), 1200);
-    }
+/* Yes click */
+yes.onclick = ()=>{
+  lines.innerHTML =
+    '<p>Thank you for forgiving me, Anjali 💖</p><p>One last question…</p>';
+  hint.textContent = 'Will you be my Valentine? ❤️';
+  controls.innerHTML = '';
 
-    // initial elements and behavior
-    const yes = document.getElementById('yes');
-    const no = document.getElementById('no');
-    const lines = document.querySelector('.lines');
-    const controls = document.querySelector('.controls');
-    const hint = document.querySelector('.hint');
+  const yes2=document.createElement('button');
+  yes2.id='yes';
+  yes2.textContent='Yes — Be my Valentine ❤️';
 
-    makeBackgroundHearts();
+  const no2=document.createElement('button');
+  no2.id='no';
+  no2.textContent='No';
+  no2.style.position='absolute';
 
-    // Stage 1: apology accept -> transition to Valentine prompt
-    yes.addEventListener('click', ()=>{
-      speak('Thank you, Anjali. I love you and I promise to be better.');
-      lines.innerHTML = '<p>Thank you for forgiving me, Anjali.</p><p>Can I ask one more thing?</p>';
-      hint.textContent = 'Anjali, would you be my Valentine? Say Yes to make me the happiest.';
-      controls.innerHTML = '';
+  controls.appendChild(yes2);
+  area.appendChild(no2);
 
-      const yes2 = el('button', { id: 'yes2', type: 'button' }, 'Yes — Be my Valentine, Anjali ❤️');
-      controls.appendChild(yes2);
+  ['mouseover','touchstart'].forEach(e=>{
+    no2.addEventListener(e,()=>moveAway(no2));
+  });
 
-      const no2 = el('button', { id: 'no2', type: 'button' }, 'No');
-      no2.style.position = 'absolute';
-      area.appendChild(no2);
+  yes2.onclick=()=>{
+    lines.innerHTML='<p>You made me the happiest person today, Anjali 💞</p>';
+    hint.textContent='Happy Valentine’s Day ❤️';
+    no2.remove();
+    const r=yes2.getBoundingClientRect();
+    burst(r.left+r.width/2,r.top+r.height/2);
+  };
+};
+</script>
 
-      yes2.addEventListener('click', (ev)=>{
-        speak('You made me so happy, Anjali! Thank you and happy Valentine\'s Day.');
-        yes2.textContent = 'Yay! ❤️';
-        yes2.disabled = true;
-        no2.disabled = true;
-        lines.innerHTML = '<p>Thank you so much, Anjali. I will always cherish you.</p>';
-        hint.textContent = 'Happy Valentine\'s Day, Anjali ❤️';
-        // burst confetti hearts at button center
-        const r = yes2.getBoundingClientRect();
-        burstHearts(r.left + r.width/2, r.top + r.height/2, '#ff4d6d');
-      });
-
-      yes2.addEventListener('focus', ()=> speak('Press Enter to say yes'));
-
-      // evasive floating No2
-      function moveNo2Away(){
-        const rect = area.getBoundingClientRect();
-        const btnRect = no2.getBoundingClientRect();
-        const margin = 12;
-        const maxLeft = Math.max(0, rect.width - btnRect.width - margin);
-        const maxTop = Math.max(0, rect.height - btnRect.height - margin);
-        const left = Math.floor(Math.random() * (maxLeft + 1));
-        const top = Math.floor(Math.random() * (maxTop + 1));
-        no2.style.left = left + 'px';
-        no2.style.top = top + 'px';
-      }
-
-      no2.addEventListener('mouseenter', moveNo2Away);
-      no2.addEventListener('mousemove', moveNo2Away);
-      no2.addEventListener('focus', ()=>{ moveNo2Away(); no2.blur(); });
-      no2.addEventListener('click', ()=>{ speak('Oh, you caught the No! I will keep trying to win your heart.'); no2.textContent = 'Okay...'; });
-
-      setTimeout(()=> moveNo2Away(), 60);
-      if (no && no.parentNode) no.parentNode.removeChild(no);
-    });
-
-    yes.addEventListener('focus', ()=> speak('Press Enter to accept my apology'));
-
-    // initial evasive behavior for original No
-    function moveNoButtonAway(e){
-      const rect = area.getBoundingClientRect();
-      const btnRect = no.getBoundingClientRect();
-      const margin = 20;
-      const maxLeft = rect.width - btnRect.width - margin;
-      const maxTop = rect.height - btnRect.height - margin;
-      const left = Math.max(8, Math.floor(Math.random() * (maxLeft || 1)));
-      const top = Math.max(8, Math.floor(Math.random() * (maxTop || 1)));
-      no.style.left = left + 'px';
-      no.style.top = top + 'px';
-    }
-
-    if (no){
-      no.addEventListener('mouseenter', moveNoButtonAway);
-      no.addEventListener('mousemove', moveNoButtonAway);
-      no.addEventListener('focus', ()=>{ moveNoButtonAway(); no.blur(); });
-      no.addEventListener('click', ()=>{ speak('Oh, you got me! I will keep trying to be better.'); no.textContent = 'Okay...'; });
-    }
-
-    window.addEventListener('load', ()=>{
-      if (no){
-        const yesRect = yes.getBoundingClientRect();
-        const areaRect = area.getBoundingClientRect();
-        const startLeft = Math.min(areaRect.width - no.offsetWidth - 12, yesRect.right - areaRect.left + 12);
-        no.style.left = startLeft + 'px';
-        no.style.top = (yesRect.top - areaRect.top) + 'px';
-      }
-    });
-
-    window.addEventListener('resize', ()=>{
-      if (document.getElementById('no2')){
-        document.getElementById('no2').style.left = '';
-        document.getElementById('no2').style.top = '';
-      }
-      if (document.getElementById('no')){
-        document.getElementById('no').style.left = '';
-        document.getElementById('no').style.top = '';
-      }
-    });
-  </script>
 </body>
 </html>
+
+
